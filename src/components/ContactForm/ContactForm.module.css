@@ -1,0 +1,65 @@
+.formTitle {
+  margin-bottom: 30px;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.formPhone {
+  margin-bottom: 44px;
+}
+
+.inputPhone {
+  display: block;
+  padding: 10px;
+  margin-top: 10px;
+
+  width: 450px;
+  height: 30px;
+
+  font-size: 36px;
+  line-height: 1.36;
+  border: 2px solid black;
+  border-radius: 6px;
+
+  transition: border-color 250ms ease-in;
+}
+
+.inputPhone:hover,
+.inputPhone:focus {
+  outline: transparent;
+  border: 3px solid mediumaquamarine;
+}
+
+.labelPhone {
+  display: block;
+  width: 100%;
+  margin-bottom: 18px;
+
+  color: gray;
+
+  text-align: left;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.17;
+}
+
+.btnPhone {
+  cursor: pointer;
+  width: 120px;
+  padding: 7px;
+  border-radius: 5px;
+  border-color: transparent;
+  background-color: gainsboro;
+  color: black;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.btnPhone:hover,
+.btnPhone:focus {
+  background-color: gray;
+  font-weight: 900;
+}

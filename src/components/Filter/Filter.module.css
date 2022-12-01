@@ -1,0 +1,36 @@
+  .inputFilter {
+    display: block;
+    padding: 8px;
+    margin-top: 10px;
+  
+    width: 450px;
+    /* height: 18px; */
+  
+    font-size: 24px;
+    line-height: 1.2;
+    border: 2px solid black;
+    border-radius: 6px;
+  
+    transition: border-color 250ms ease-in;
+  }
+  
+  .inputFilter:hover,
+  .inputFilter:focus {
+    outline: transparent;
+    border: 3px solid mediumaquamarine;
+  }
+  
+  .labelFilter {
+    display: block;
+    width: 100%;
+    margin-bottom: 18px;
+  
+    color: gray;
+  
+    text-align: left;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.17;
+  }
+  
+  
