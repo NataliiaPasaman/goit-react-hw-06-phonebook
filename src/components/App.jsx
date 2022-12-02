@@ -26,8 +26,6 @@ export const App = () => {
 
   const onInputFilterChange = e => setFilter(e.target.value);
 
-
-
   const getFilterContacts = () => {
     const normalizedFilter = filter.toLowerCase();
     return contacts.filter(contact =>
@@ -35,10 +33,6 @@ export const App = () => {
     );
   };
   const filterContacts = getFilterContacts();
-
-  const deleteContact = id => {
-    setContacts(prevState => prevState.filter(contact => contact.id !== id));
-  };
 
   return (
     <div
@@ -53,10 +47,7 @@ export const App = () => {
       <ContactForm />
       <h2>Contacts</h2>
       <Filter onInputFilterChange={onInputFilterChange} filter={filter} />
-      <ContactsList
-        // FilterContact={filterContacts}
-        // deleteContact={deleteContact}
-      />
+      <ContactsList />
     </div>
   );
 };
