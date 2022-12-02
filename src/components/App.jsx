@@ -2,37 +2,37 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactsList } from './ContactsList/ContactsList';
 
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
-/** Створи дії збереження та видалення контакту, а також оновлення фільтра
+/** Створи  оновлення фільтра
  * 
 // Використай бібліотеку Redux Persist для збереження масиву контактів
 //  у локальному сховищі */
 
-const CONTACTS = 'contacts_List';
+// const CONTACTS = 'contacts_List';
 
 export const App = () => {
-  const savedContacts = () => {
-    return JSON.parse(localStorage.getItem(CONTACTS)) || [];
-  }
+  // const savedContacts = () => {
+  //   return JSON.parse(localStorage.getItem(CONTACTS)) || [];
+  // }
 
-  const [contacts, setContacts] = useState(savedContacts);
-  const [filter, setFilter] = useState('');
+  // const [contacts, setContacts] = useState(savedContacts);
+  // const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    localStorage.setItem(CONTACTS, JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   localStorage.setItem(CONTACTS, JSON.stringify(contacts));
+  // }, [contacts]);
 
 
-  const onInputFilterChange = e => setFilter(e.target.value);
+  // const onInputFilterChange = e => setFilter(e.target.value);
 
-  const getFilterContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
-    );
-  };
-  const filterContacts = getFilterContacts();
+  // const getFilterContacts = () => {
+  //   const normalizedFilter = filter.toLowerCase();
+  //   return contacts.filter(contact =>
+  //     contact.name.toLowerCase().includes(normalizedFilter)
+  //   );
+  // };
+  // const filterContacts = getFilterContacts();
 
   return (
     <div
@@ -46,7 +46,10 @@ export const App = () => {
       <h1>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
-      <Filter onInputFilterChange={onInputFilterChange} filter={filter} />
+      <Filter 
+      // onInputFilterChange={onInputFilterChange} 
+      // filter={filter} 
+      />
       <ContactsList />
     </div>
   );
