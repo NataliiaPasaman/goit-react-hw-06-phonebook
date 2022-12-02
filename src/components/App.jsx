@@ -1,15 +1,13 @@
-import { nanoid } from 'nanoid';
-
 import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactsList } from './ContactsList/ContactsList';
+
 import { useState, useEffect } from 'react';
 
 /** Створи дії збереження та видалення контакту, а також оновлення фільтра
-
-Зв'яжи React-компоненти з Redux-логікою за допомогою хуків react-redux.
-Використай бібліотеку Redux Persist для збереження масиву контактів
- у локальному сховищі */
+ * 
+// Використай бібліотеку Redux Persist для збереження масиву контактів
+//  у локальному сховищі */
 
 const CONTACTS = 'contacts_List';
 
@@ -25,22 +23,6 @@ export const App = () => {
     localStorage.setItem(CONTACTS, JSON.stringify(contacts));
   }, [contacts]);
 
-  const hadleSubmit = (name, number) => {
-    const contact = {
-      id: nanoid(12),
-      name,
-      number,
-    };
-
-    const isfindContact = contacts.find(
-      oneContact => oneContact.name === contact.name
-    );
-    if (isfindContact) {
-      alert(`${contact.name} is already in contacts`);
-      return;
-    }
-    setContacts(prevState => [contact, ...prevState]);
-  };
 
   const onInputFilterChange = e => setFilter(e.target.value);
 
@@ -72,9 +54,8 @@ export const App = () => {
       <h2>Contacts</h2>
       <Filter onInputFilterChange={onInputFilterChange} filter={filter} />
       <ContactsList
-        FilterContact={filterContacts}
-        deleteContact={deleteContact}
-        contacts={contacts}
+        // FilterContact={filterContacts}
+        // deleteContact={deleteContact}
       />
     </div>
   );
