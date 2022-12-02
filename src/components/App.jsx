@@ -1,8 +1,15 @@
 import { nanoid } from 'nanoid';
+
 import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactsList } from './ContactsList/ContactsList';
 import { useState, useEffect } from 'react';
+
+/** Створи дії збереження та видалення контакту, а також оновлення фільтра
+
+Зв'яжи React-компоненти з Redux-логікою за допомогою хуків react-redux.
+Використай бібліотеку Redux Persist для збереження масиву контактів
+ у локальному сховищі */
 
 const CONTACTS = 'contacts_List';
 
@@ -37,6 +44,8 @@ export const App = () => {
 
   const onInputFilterChange = e => setFilter(e.target.value);
 
+
+
   const getFilterContacts = () => {
     const normalizedFilter = filter.toLowerCase();
     return contacts.filter(contact =>
@@ -59,7 +68,7 @@ export const App = () => {
       }}
     >
       <h1>Phonebook</h1>
-      <ContactForm hadleSubmit={hadleSubmit} />
+      <ContactForm />
       <h2>Contacts</h2>
       <Filter onInputFilterChange={onInputFilterChange} filter={filter} />
       <ContactsList

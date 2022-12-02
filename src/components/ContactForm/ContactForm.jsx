@@ -1,52 +1,28 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addContact } from 'redux/contactsSlice';
 import css from 'components/ContactForm/ContactForm.module.css';
 
-export const ContactForm = ({ hadleSubmit }) => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+export const ContactForm = () => {
+  const dispatch = useDispatch();
 
-  const onInputChange = evt => {
-    const { name, value } = evt.currentTarget;
-
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-      case 'number':
-        setNumber(value);
-        break;
-
-      default:
-        return;
-    }
-  };
-
-  const onSubmitForm = evt => {
+  const handleSubmit = evt => {
     evt.preventDefault();
-    hadleSubmit(name, number);
-    clearForm();
+    const form = evt.target;
+    dispatch(addContact(form.elements.name.value, form.elements.number.value));
+    form.reset();
   };
-
-  const clearForm = () => {
-   setName('');
-   setNumber('');
-  };
-
 
     return (
-      <form className={css.formPhone} onSubmit={onSubmitForm}>
+      <form className={css.formPhone} onSubmit={handleSubmit}>
         <label className={css.labelPhone}>
           Name
           <input
             className={css.inputPhone}
             type="text"
             name="name"
-            value={name}
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
-            onChange={onInputChange}
           />
         </label>
         <label className={css.labelPhone}>
@@ -55,11 +31,9 @@ export const ContactForm = ({ hadleSubmit }) => {
             className={css.inputPhone}
             type="tel"
             name="number"
-            value={number}
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
-            onChange={onInputChange}
           />
         </label>
         <button className={css.btnPhone} type="submit">
@@ -69,7 +43,3 @@ export const ContactForm = ({ hadleSubmit }) => {
     );
 
 }
-
-ContactForm.propTypes = {
-  hadleSubmit: PropTypes.func.isRequired,
-};
