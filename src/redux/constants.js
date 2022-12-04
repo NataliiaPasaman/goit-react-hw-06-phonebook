@@ -1,7 +1,7 @@
 
 const initialState = {
     contacts: [],
-    filters: '',
+    filter: '',
 }
 
 export default initialState;

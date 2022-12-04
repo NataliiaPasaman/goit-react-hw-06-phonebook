@@ -1,18 +1,8 @@
 import { ContactForm } from './ContactForm/ContactForm';
-// import { Filter } from './Filter/Filter';
+import { Filter } from './Filter/Filter';
 import { ContactsList } from './ContactsList/ContactsList';
 
 export const App = () => {
-
-  // const onInputFilterChange = e => setFilter(e.target.value);
-
-  // const getFilterContacts = () => {
-  //   const normalizedFilter = filter.toLowerCase();
-  //   return contacts.filter(contact =>
-  //     contact.name.toLowerCase().includes(normalizedFilter)
-  //   );
-  // };
-  // const filterContacts = getFilterContacts();
 
   return (
     <div
@@ -26,10 +16,7 @@ export const App = () => {
       <h1>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
-      {/* <Filter 
-      // onInputFilterChange={onInputFilterChange} 
-      // filter={filter} 
-      /> */}
+      <Filter />
       <ContactsList />
     </div>
   );
