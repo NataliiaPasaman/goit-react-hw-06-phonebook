@@ -5,6 +5,7 @@ import css from 'components/ContactForm/ContactForm.module.css';
 
 export const ContactForm = () => {
   const contacts = useSelector(getContacts);
+  console.log('contacts', contacts);
   const dispatch = useDispatch();
 
   const handleSubmit = evt => {
