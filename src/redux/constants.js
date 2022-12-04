@@ -1,6 +1,7 @@
+
 const initialState = {
     contacts: [],
-    filter: "",
+    filters: '',
 }
 
 export default initialState;

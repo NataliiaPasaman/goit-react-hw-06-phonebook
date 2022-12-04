@@ -4,21 +4,21 @@ import { getContacts } from "redux/selector";
 import css from 'components/ContactForm/ContactForm.module.css';
 
 export const ContactForm = () => {
-  const arrayOfContacts = useSelector(getContacts);
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = evt => {
     evt.preventDefault();
     const form = evt.target;
     const nameContact = form.elements.name.value;
-    const isfindContact = arrayOfContacts.find(contact => contact.name === nameContact);
+    const isfindContact = contacts.find(contact => contact.name === nameContact);
 
     if(isfindContact) {
       form.reset();
       alert(`${nameContact} is already in contacts`);
       return;
     }
-    
+
     dispatch(addContact(nameContact, form.elements.number.value));
     form.reset();
   };

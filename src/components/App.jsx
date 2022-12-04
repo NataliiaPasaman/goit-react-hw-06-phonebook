@@ -1,28 +1,8 @@
 import { ContactForm } from './ContactForm/ContactForm';
-import { Filter } from './Filter/Filter';
+// import { Filter } from './Filter/Filter';
 import { ContactsList } from './ContactsList/ContactsList';
 
-// import { useState, useEffect } from 'react';
-
-/** Створи  оновлення фільтра
- * 
-// Використай бібліотеку Redux Persist для збереження масиву контактів
-//  у локальному сховищі */
-
-// const CONTACTS = 'contacts_List';
-
 export const App = () => {
-  // const savedContacts = () => {
-  //   return JSON.parse(localStorage.getItem(CONTACTS)) || [];
-  // }
-
-  // const [contacts, setContacts] = useState(savedContacts);
-  // const [filter, setFilter] = useState('');
-
-  // useEffect(() => {
-  //   localStorage.setItem(CONTACTS, JSON.stringify(contacts));
-  // }, [contacts]);
-
 
   // const onInputFilterChange = e => setFilter(e.target.value);
 
@@ -46,10 +26,10 @@ export const App = () => {
       <h1>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
-      <Filter 
+      {/* <Filter 
       // onInputFilterChange={onInputFilterChange} 
       // filter={filter} 
-      />
+      /> */}
       <ContactsList />
     </div>
   );
