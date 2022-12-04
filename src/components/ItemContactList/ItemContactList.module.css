@@ -1,10 +1,22 @@
 .contacts__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
     font-size: 24px;
     line-height: 1.3;
 }
 
 .contacts__item:not(:last-child) {
     margin-bottom: 10px;
+}
+
+.contacts__box {
+    padding: 8px;
+}
+
+.contacts__title {
+    display: inline-block;
 }
 
 .contacts__number {
